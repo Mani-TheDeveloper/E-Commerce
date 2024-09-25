@@ -20,7 +20,7 @@ function display(products) {
                 <span style="color:white; font-size:2rem">★ </span>
                 <span>${product.rating.rate}</span>
             </h3>
-            <h1>₹ ${product.price}</h1>
+            <h1>$ ${product.price}</h1>
             <a href='#cart'>
                 <button class="addToCart">Add to Cart</button>
             </a>`;
@@ -67,7 +67,7 @@ function updateCart() {
         <img src=${item.image} alt=${item.title}>
         <div>
         <h3>${item.title}</h3>
-        <h2>₹ ${item.price}</h2>
+        <h2>$ ${item.price}</h2>
         </div>`;
 
         /* append to cartProducts */
@@ -95,23 +95,23 @@ function updateCart() {
             <tbody>
                 <tr>
                     <td>Total MRP</td>
-                    <td>₹ ${totalMrp.toFixed(2)}</td>
+                    <td>$ ${totalMrp.toFixed(2)}</td>
                 </tr>
                 <tr>
                     <td>Coupon Discount</td>
-                    <td>₹ 50</td>
+                    <td>$ 50</td>
                 </tr>
                 <tr>
                     <td>Platform Fee</td>
-                    <td>₹ 10</td>
+                    <td>$ 10</td>
                 </tr>
                 <tr>
                     <td>Shipping Charges</td>
-                    <td>₹ 20</td>
+                    <td>$ 20</td>
                 </tr>
                 <tr>
                     <td>Total Amount</td>
-                    <td>₹ ${totalMrp.toFixed(2) + 80}</td>
+                    <td>$ ${totalMrp.toFixed(2) + 80}</td>
                 </tr>
             </tbody>
         </table>`
