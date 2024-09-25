@@ -33,8 +33,14 @@ function display(products) {
 
 /* Handling Button Listener */
 function handleAddToCart(product) {
+    /* Checking for existing product */
+    const existProduct = cart.find(item => item.id === product.id);
     /* Add product to card */
-    cart.push(product);
+    if (existProduct) {
+        existProduct.qty += 1;
+    } else {
+        cart.push({ ...product, qty: 1 });
+    }
     updateCart(); //UI UPDATION
 }
 
@@ -44,12 +50,28 @@ function handleRemoveFromCart(productId) {
     updateCart();
 }
 
-function handlePlaceOrder(){
-    for(let i = 0; i < cart.length; i++){
+/* Qty-Ctrl Btn Event */
+function handleQtyCtrlBtn(action, prodId) {
+    const productItem = cart.find(item => item.id === prodId);
+    if (action === 'incr') {
+        productItem.qty += 1;
+    } else {
+        if (productItem.qty != 1) {
+            productItem.qty -= 1;
+        }
+        else {
+            cart = cart.filter((item) => item.id != prodId);
+        }
+    }
+    updateCart();
+}
+
+function handlePlaceOrder() {
+    for (let i = 0; i < cart.length; i++) {
         delete cart[i];
     }
     cart.length = 0;
-    alert('Placed Order Successfully');
+    alert('Order Placed Successfully');
     updateCart();
 }
 
@@ -72,26 +94,38 @@ function updateCart() {
         cartItem.className = 'cartItem';
 
         cartItem.innerHTML = `
-        <button class="closeButton">X</button>
+        <button class="closeButton">&times;</button>
         <img src=${item.image} loading="lazy" alt=${item.title}>
         <div>
-        <h3>${item.title}</h3>
-        <h2>$ ${item.price}</h2>
+            <h3>${item.title}</h3>
+            <h2>
+                <span style="text-decoration: line-through;">$ ${item.price}</span>
+                $ ${(item.price * 0.8).toFixed(2)}
+            </h2>
+            <div class='qty-ctrl'>
+                <button class="qty-btn desc">-</button>
+                <span>${item.qty}</span>
+                <button class="qty-btn incr">+</button>
+            </h1>
         </div>`;
 
         /* append to cartProducts */
         cartDiv.appendChild(cartItem);
 
         /* Button AddEventListener */
-        cartItem.querySelector('button').addEventListener('click', () => { handleRemoveFromCart(item.id) });
+        cartItem.querySelector('.closeButton').addEventListener('click', () => { handleRemoveFromCart(item.id) });
+        cartItem.querySelector('.desc').addEventListener('click', () => { handleQtyCtrlBtn('desc', item.id) })
+        cartItem.querySelector('.incr').addEventListener('click', () => { handleQtyCtrlBtn('incr', item.id) })
 
         /* Total MRP update */
-        totalMrp += item.price;
+        totalMrp += item.price * item.qty * 0.8;
     })
 
 
     /* Price Summary Details */
     const priceDiv = document.querySelector('.priceDiv');
+    let ShippingCost;
+    totalMrp > 500 ? ShippingCost = 0 : ShippingCost = 20;
     if (cart.length == 0) {
         priceDiv.innerHTML = '';
     }
@@ -116,14 +150,14 @@ function updateCart() {
                 </tr>
                 <tr>
                     <td>Shipping Charges</td>
-                    <td>$ 20</td>
+                    <td>$ ${ShippingCost}</td>
                 </tr>
                 <tr>
                     <td>Total Amount</td>
-                    <td>$ ${(totalMrp+20).toFixed(2)}</td>
+                    <td>$ ${(totalMrp + 20).toFixed(2)}</td>
                 </tr>
                <tr>
-                    <td colspan='2'>
+                    <td colspan="2">
                         <button class='placeButton'>Place Order</button>
                     </td>
                 </tr>
