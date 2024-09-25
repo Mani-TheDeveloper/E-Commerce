@@ -44,10 +44,6 @@ function handleRemoveFromCart(productId) {
     updateCart();
 }
 
-function handlePlaceBtn(){
-    alert('Placed Order Successfully');
-}
-
 /* UpdateCart func */
 function updateCart() {
     /* query cartProducts */
@@ -124,7 +120,7 @@ function updateCart() {
                 </tr>
             </tbody>
         </table>`
-        priceDiv.querySelector('.placeButton').addEventListener('click', () => { handlePlaceBTn() });
+        priceDiv.querySelector('.placeButton').addEventListener('click', () => { alert('Placed Order Successfully');});
     }
 };
 
