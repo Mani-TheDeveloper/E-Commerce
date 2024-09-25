@@ -101,6 +101,8 @@ function updateCart() {
             <h2>
                 <span style="text-decoration: line-through;">$ ${item.price}</span>
                 $ ${(item.price * 0.8).toFixed(2)}
+                <br/>
+                <span class='blink-anime'>20% OFF</span>
             </h2>
             <div class='qty-ctrl'>
                 <button class="qty-btn desc">-</button>
@@ -154,7 +156,7 @@ function updateCart() {
                 </tr>
                 <tr>
                     <td>Total Amount</td>
-                    <td>$ ${(totalMrp + 20).toFixed(2)}</td>
+                    <td style='font-weight:bolder'>$ ${(totalMrp + 20).toFixed(2)}</td>
                 </tr>
                <tr>
                     <td colspan="2">
