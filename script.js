@@ -111,11 +111,11 @@ function updateCart() {
                 </tr>
                 <tr>
                     <td>Total Amount</td>
-                    <td>$ ${totalMrp.toFixed(2) + 20}</td>
+                    <td>$ ${(totalMrp+20).toFixed(2)}</td>
                 </tr>
                <tr>
                     <td>
-                        <button class='placeButtton'>Place Order</button>
+                        <button class='placeButton'>Place Order</button>
                     </td>
                 </tr>
             </tbody>
