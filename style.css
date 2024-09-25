@@ -60,6 +60,25 @@ ul a:hover {
     font-weight: bold;
 }
 
+.blink-anime {
+    color: red;
+    font-weight: bolder;
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
 .productList {
     margin: 1rem;
     padding: 1rem;
