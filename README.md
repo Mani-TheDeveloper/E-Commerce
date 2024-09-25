@@ -27,6 +27,14 @@ Play around: Browse the products, add them to the cart, and see how the price ch
 Or Else:
 Use my GitHub repository Link : https://mani-thedeveloper.github.io/E-Commerce/
 
+## Screenshots
+![Landing Page](https://raw.githubusercontent.com/Mani-TheDeveloper/E-Commerce/refs/heads/main/Screenshot%202024-09-25%20094623.png)
+![Product Section](https://raw.githubusercontent.com/Mani-TheDeveloper/E-Commerce/refs/heads/main/Screenshot%202024-09-25%20094649.png)
+![Empty Cart Section](https://raw.githubusercontent.com/Mani-TheDeveloper/E-Commerce/refs/heads/main/Screenshot%202024-09-25%20094724.png)
+![Products Added to Cart](https://raw.githubusercontent.com/Mani-TheDeveloper/E-Commerce/refs/heads/main/Screenshot%202024-09-25%20094813.png)
+![After Poping Products in Cart](https://raw.githubusercontent.com/Mani-TheDeveloper/E-Commerce/refs/heads/main/Screenshot%202024-09-25%20094755.png)
+
+
 Challenges I Faced:
 Since I’m a beginner, I had a bit of a learning curve with JavaScript, especially with:
 
