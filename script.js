@@ -44,6 +44,15 @@ function handleRemoveFromCart(productId) {
     updateCart();
 }
 
+function handlePlaceOrder(){
+    for(let i = 0; i < cart.length; i++){
+        delete cart[i];
+    }
+    cart.length = 0;
+    alert('Placed Order Successfully');
+    updateCart();
+}
+
 /* UpdateCart func */
 function updateCart() {
     /* query cartProducts */
@@ -120,7 +129,7 @@ function updateCart() {
                 </tr>
             </tbody>
         </table>`
-        priceDiv.querySelector('.placeButton').addEventListener('click', () => { alert('Placed Order Successfully');});
+        priceDiv.querySelector('.placeButton').addEventListener('click', () => { handlePlaceOrder(); });
     }
 };
 
