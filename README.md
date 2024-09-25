@@ -17,15 +17,10 @@ See a detailed breakdown of the price, including discounts and fees.
 ## How to Run the Project:
 ## You can run this project on your own computer by following these steps:
 
-Download the project: You can either download the ZIP file or clone the project from my GitHub repository.
-
-## git clone https://github.com/your-username/ecommerce-project.git
+## Use my GitHub repository Link : https://mani-thedeveloper.github.io/E-Commerce/
 
 Open the website: After downloading, open the index.html file in your browser (Google Chrome, Firefox, etc.).
 Play around: Browse the products, add them to the cart, and see how the price changes when you add or remove items.
-
-Or Else:
-## Use my GitHub repository Link : https://mani-thedeveloper.github.io/E-Commerce/
 
 ## Screenshots:
 
@@ -60,7 +55,7 @@ I built this website using:
 
 ## HTML: For the structure of the webpage.
 ## CSS: For styling the page and making it look nice.
-J## avaScript: To add functionality like fetching product data, adding items to the cart, and calculating the total price.
+## JavaScript: To add functionality like fetching product data, adding items to the cart, and calculating the total price.
 
 Thank You for Checking Out My Project!
 This was a great learning experience for me, and I hope you enjoy checking it out as much as I enjoyed making it!
