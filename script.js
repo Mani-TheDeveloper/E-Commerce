@@ -14,7 +14,7 @@ function display(products) {
         const card = document.createElement('div');
         card.className = 'productCard';
         card.innerHTML = `
-            <img src=${product.image} alt=${product.title}>
+            <img src=${product.image} loading="lazy" alt=${product.title}>
             <h2>${product.title}</h2>
             <h3>
                 <span style="color:white; font-size:2rem">★ </span>
@@ -64,7 +64,7 @@ function updateCart() {
 
         cartItem.innerHTML = `
         <button class="closeButton">X</button>
-        <img src=${item.image} alt=${item.title}>
+        <img src=${item.image} loading="lazy" alt=${item.title}>
         <div>
         <h3>${item.title}</h3>
         <h2>$ ${item.price}</h2>
