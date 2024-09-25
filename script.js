@@ -44,6 +44,10 @@ function handleRemoveFromCart(productId) {
     updateCart();
 }
 
+function handlePlaceBtn(){
+    alert('Placed Order Successfully');
+}
+
 /* UpdateCart func */
 function updateCart() {
     /* query cartProducts */
@@ -111,10 +115,16 @@ function updateCart() {
                 </tr>
                 <tr>
                     <td>Total Amount</td>
-                    <td>$ ${totalMrp.toFixed(2) + 80}</td>
+                    <td>$ ${totalMrp.toFixed(2) + 20}</td>
+                </tr>
+               <tr>
+                    <td>
+                        <button class='placeButtton'>Place Order</button>
+                    </td>
                 </tr>
             </tbody>
         </table>`
+        priceDiv.querySelector('.placeButton').addEventListener('click', () => { handlePlaceBTn() });
     }
 };
 
