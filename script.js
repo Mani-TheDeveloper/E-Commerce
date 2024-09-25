@@ -123,7 +123,7 @@ function updateCart() {
                     <td>$ ${(totalMrp+20).toFixed(2)}</td>
                 </tr>
                <tr>
-                    <td>
+                    <td colspan='2'>
                         <button class='placeButton'>Place Order</button>
                     </td>
                 </tr>
